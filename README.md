@@ -18,7 +18,14 @@ The pipeline includes the following steps and tools:
 | Remove recombination from variant alignment | Gubbins |
 | Mask the recombination sites in the core genome alignment | maskrc-svg script |
 | Calculate recombination filtered- and unfiltered SNP distances | snp-dists |
-!Add script for visualization of SNPs??
+
+## Visualization of SNPs using Artemis
+The script that was used to create input files for visualization of SNPs in Artemis is also added to this repository, together with the files needed to run this script:
+ - List containing all isolate pairs to compare
+ - Annotation files of reference FA1090
+ - List of genes annotated in FA1090
+
+The script uses the core genome alignment, created by Snippy in the pipeline above: 'snippy_refFA1090_out/clean.full.aln'
 
 ## Other files needed
 - Reference genome FA1090 is used for calculating coverage and calling variants: NC_002946.2. The reference genome should be located in the same directory as the Snakefile.
