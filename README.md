@@ -6,11 +6,13 @@ This pipeline uses the following dependencies:
 - Conda
 - Snakemake
 - Python3
-- [maskrc-svg script](https://github.com/kwongj/maskrc-svg); expected path: 'scripts/maskrc-svg.py'
 
 ## Input
 This pipeline uses forward and reverse raw Illumina sequencing reads which are located in the folder `raw_data`. The raw data files should be named `{id}_R1.fastq.gz` and `{id}_R2.fastq.gz`. 
 
+## Other files needed
+- [maskrc-svg script](https://github.com/kwongj/maskrc-svg); expected path: 'scripts/maskrc-svg.py'
+- Reference genome FA1090 is used for calculating coverage and calling variants: NC_002946.2. The reference genome should be located in the same directory as the Snakefile.
 
 ## Pipeline 
 The pipeline includes the following steps and tools:
@@ -33,9 +35,8 @@ The script that was used to create input files for visualization of SNPs in Arte
  - Annotation files of reference FA1090
  - List of genes annotated in FA1090
 
-The script uses the core genome alignment, created by Snippy in the pipeline above: 'snippy_refFA1090_out/clean.full.aln'
+The script uses the core genome alignment, created by Snippy in the pipeline: 'snippy_refFA1090_out/clean.full.aln'
 
-## Other files needed
-- Reference genome FA1090 is used for calculating coverage and calling variants: NC_002946.2. The reference genome should be located in the same directory as the Snakefile.
+
 
 
