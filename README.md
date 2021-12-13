@@ -1,8 +1,16 @@
 # Within-host-genetic-variation-in-Neisseria-gonorrhoeae
 This repository contains the Snakemake pipeline used to assess within-host genetic variation in _Neisseria gonorrhoeae_. Isolate were obtained during a clinical trial on novel antibiotic treatment options for gonorrhoea. Isolate pairs were formed that consisted of isolates obtained from a single individual from multiple time points (reflecting antibiotic treatment failure) and from multiple anatomical locations. 
 
+## Dependencies
+This pipeline uses the following dependencies:
+- Conda
+- Snakemake
+- Python3
+- [maskrc-svg script](https://github.com/kwongj/maskrc-svg); expected path: 'scripts/maskrc-svg.py'
+
 ## Input
-This pipeline uses forward and reverse raw Illumina sequencing reads which are located in the folder `raw_data`. The raw data files should be named `{id}_R1.fastq.gz` and `{id}_R2.fastq.gz`
+This pipeline uses forward and reverse raw Illumina sequencing reads which are located in the folder `raw_data`. The raw data files should be named `{id}_R1.fastq.gz` and `{id}_R2.fastq.gz`. 
+
 
 ## Pipeline 
 The pipeline includes the following steps and tools:
@@ -16,7 +24,7 @@ The pipeline includes the following steps and tools:
 | Calculation of percentage of bases covered and coverage depth | samtools |
 | Call variants using reference FA1090 + create core genome alignment | snippy |
 | Remove recombination from variant alignment | Gubbins |
-| Mask the recombination sites in the core genome alignment | maskrc-svg script |
+| Mask the recombination sites in the core genome alignment | [maskrc-svg script](https://github.com/kwongj/maskrc-svg) |
 | Calculate recombination filtered- and unfiltered SNP distances | snp-dists |
 
 ## Visualization of SNPs using Artemis
